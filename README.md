@@ -1,1 +1,2 @@
-# odin_project-sketchpad
+# Odin Project - sketchpad
+Javascript/jQuery project
