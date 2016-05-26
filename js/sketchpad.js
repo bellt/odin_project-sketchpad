@@ -24,7 +24,7 @@ var $setupGrid = function(sideLength){
     $('.sketchbox').height(calculateBoxeSize(sideLength) - 2 + 'px');
     
     $('.sketchbox').mouseenter(function(){
-        $(this).css('background-color','black');
+        $(this).css('background-color','green');
     });
 }
 
