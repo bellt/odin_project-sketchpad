@@ -1,3 +1,5 @@
+var sideLength = 12;
+
 var calculateBoxeSize = function(sideLength){
     return Math.floor(900/sideLength);
 }
@@ -6,10 +8,14 @@ var calculateTotalBoxes = function(sideLength){
 }
 
 var changeGridSize = function(){
-    var sideLength = parseInt(prompt('Enter how many boxes you want per side (keep it less than 70)'),'0');
+    sideLength = parseInt(prompt('Enter how many boxes you want per side (keep it less than 70)'),'0');
     if(sideLength > 70){
         sideLength = 70;
     }
+    $setupGrid(sideLength);
+}
+
+var clearGrid = function(){
     $setupGrid(sideLength);
 }
 
@@ -29,5 +35,5 @@ var $setupGrid = function(sideLength){
 }
 
 $(document).ready(function(){
-    $setupGrid(8); //using 8 as the default sideLength on page load
+    $setupGrid(sideLength); //using 8 as the default sideLength on page load
 });
