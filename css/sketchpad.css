@@ -1,0 +1,20 @@
+#wrapper {
+    width: 900px;
+    margin: 0px auto;
+}
+
+#sketcharea {
+    margin:0px;
+}
+
+.sketchbox {
+    height:19px;
+    width: 19px;
+    margin: 0px 1px;
+    display: inline-block;
+    background-color: gainsboro;
+}
+
+.button {
+    margin:1px 2px 1px 0px;
+}
