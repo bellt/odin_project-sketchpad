@@ -1,6 +1,8 @@
 var sideLength = 12; //setting 12 as the default value for the grid size
 var colourLetters = ['a','b','c','d','e','f'];
 var isRandomColour = false;
+var darken = false;
+var opacities = ['0.1','0.2','0.3','0.4','0.5','0.6','0.7','0.8','0.9','0.99'];
 
 var calculateBoxeSize = function(sideLength){
     return Math.floor(900/sideLength);
@@ -43,10 +45,23 @@ var randomColour = function(){
 }
 
 var randomize = function(){
+    darken = false;
+    clearGrid();
     if(isRandomColour === false){
         isRandomColour = true;
     }else{
         isRandomColour = false;
+    }
+}
+
+var darkenize = function(){
+    isRandomColour = false;
+    clearGrid();
+    if(darken === false){
+        darken = true;
+    }else{
+        darken = false;
+        $('.sketchbox').css('opacity',1);
     }
 }
 
@@ -61,10 +76,22 @@ var $setupGrid = function(sideLength){
     $('.sketchbox').height(calculateBoxeSize(sideLength) - 2 + 'px');
     
     $('.sketchbox').mouseenter(function(){
-        if(isRandomColour === false){
-            $(this).css('background-color','green');
-        }else{
+        if(isRandomColour === true){
             $(this).css('background-color',randomColour());
+        }else if(darken === true){
+            for(var i=0; i<opacities.length;i++){
+                if($(this).css('opacity') === '1'){
+                        $(this).css('opacity',opacities[0]);
+                        $(this).css('background-color','green');
+                        break;
+                }
+                if($(this).css('opacity') === opacities[i]){
+                    $(this).css('opacity',opacities[i+1]);
+                    break;
+                }
+            }
+        }else{
+            $(this).css('background-color','green');
         }
     });
 }
