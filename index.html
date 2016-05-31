@@ -10,12 +10,23 @@
 </head>
 <body>
 <div id='wrapper'>
-    <button class='button' onclick='clearGrid()'>Clear grid</button>
-    <button class='button' onclick='changeGridSize()'>Change grid size</button>
-    <button class='button' onclick='randomize()'>Toggle random colours</button>
-    <button class='button' onclick='darkenize()'>Gradually darken</button>
+    <div class='heading-div'>
+        Sketchpad
+        <div id='buttons'>
+            <button class='button' onclick='changeGridSize()'>Change grid size</button>
+            <button class='button' onclick='reset()'>Green colours</button>
+            <button class='button' onclick='randomize()'>Random colours</button>
+            <button class='button' onclick='darkenize()'>Gradually darken</button>
+            <button class='button' onclick='clearGrid()'>Clear grid</button>
+        </div><!--buttons-->
+    </div><!--heading-div-->
+    
     <div id='sketcharea'>
-        
     </div><!--sketcharea-->
+    
+    <div class='footer-div'>
+        <span class='footer-item'>May 2016</span>
+        <span class='footer-item-right'>Tom Bell</span>
+    </div><!--footer-div-->
 </div><!--wrapper-->
 </body>

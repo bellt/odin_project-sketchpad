@@ -1,11 +1,11 @@
-var sideLength = 12; //setting 12 as the default value for the grid size
+var sideLength = 20; //setting 20 as the default value for the grid size
 var colourLetters = ['a','b','c','d','e','f'];
 var isRandomColour = false;
 var darken = false;
 var opacities = ['0.1','0.2','0.3','0.4','0.5','0.6','0.7','0.8','0.9','0.99'];
 
 var calculateBoxeSize = function(sideLength){
-    return Math.floor(900/sideLength);
+    return Math.floor(800/sideLength);
 }
 
 var calculateTotalBoxes = function(sideLength){
@@ -47,22 +47,19 @@ var randomColour = function(){
 var randomize = function(){
     darken = false;
     clearGrid();
-    if(isRandomColour === false){
-        isRandomColour = true;
-    }else{
-        isRandomColour = false;
-    }
+    isRandomColour = true;
 }
 
 var darkenize = function(){
     isRandomColour = false;
     clearGrid();
-    if(darken === false){
-        darken = true;
-    }else{
-        darken = false;
-        $('.sketchbox').css('opacity',1);
-    }
+    darken = true;
+}
+
+var reset = function(){
+    isRandomColour = false;
+    darken = false;
+    clearGrid();
 }
 
 var $setupGrid = function(sideLength){
